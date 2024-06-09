@@ -24,7 +24,8 @@ export default function App() {
     <View style={styles.container}>
       <WebView
         source={{ uri: 'https://www.clasome.com' }}
-        style={{ flex: 1}}
+        mixedContentMode="always"
+        style={styles.webview}
         onLoadEnd={() => setIsWebViewLoaded(true)}
       />
     </View>
@@ -33,6 +34,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  webview: {
     flex: 1,
   },
 });
